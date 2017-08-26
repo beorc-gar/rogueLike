@@ -1,0 +1,11 @@
+*******************************************************************************
+Test Cases
+*******************************************************************************
+Executed with no file name: my error message was printed and the program quit.
+
+Executed with a bad file name: my program uses a default level instead.
+
+Deleted default level, and executed with bad file name: my error messages were 
+printed and my program quit.
+
+Kept playing the game over and over to make sure everything was just right.
