@@ -1,14 +1,5 @@
 /*******************************setup.c*****************************************************
-Student Name: Bronson Graansma                Student Number: 0872249
 Date:         Monday, March 2nd, 2015         Course Name:    CIS*2500
-I have exclusive control over this submission via my password.
-By including this statement in this header comment, I certify that:
-     1) I have read and understood the University policy on academic integrity;
-     2) I have completed the Computing with Integrity Tutorial on Moodle; and
-     3) I have achieved at least 80% in the Computing with Integrity Self Test.
-I assert that this work is my own. I have appropriately acknowledged any and all material
-(data, images, ideas or words) that I have used, whether directly quoted or paraphrased.
-Furthermore, I certify that this assignment was prepared by me specifically for this course.
 *********************************************************************************************/
 
 #include "main.h"
@@ -22,7 +13,7 @@ void startGame(char* fileName) {
     room* rooms = malloc(sizeof(room)*6);
     door** doors = malloc(sizeof(door*)*6);
     object** objects = malloc(sizeof(object*)*6);
-    hero bronson;
+    hero me;
     char*** subString = malloc(sizeof(char**)*6);
     char** lineContents = malloc(sizeof(char*)*6);
     
@@ -38,7 +29,7 @@ void startGame(char* fileName) {
 
     readFile(fileName,lineContents);
     parse(lineContents,subString);
-    bronson = getHero(subString);
+    me = getHero(subString);
 
     for (i=0; i<6; i++) {
         rooms[i] = getRoom(subString[i][0]);
@@ -48,7 +39,7 @@ void startGame(char* fileName) {
             objects[i][j] = getObject(subString[i][j]);
         }
     }
-    createDungeon(rooms, doors, objects, bronson);
+    createDungeon(rooms, doors, objects, me);
 
     for (i=0; i<6; i++) {
         free(lineContents[i]);
@@ -267,7 +258,7 @@ object getObject(char* subString) {
     return initObject;
 }
 
-void createDungeon(room* rooms,door** doors,object** objects,hero bronson) {
+void createDungeon(room* rooms,door** doors,object** objects,hero me) {
     int i = 0;
     int j = 0;
     int k = 0;
@@ -337,18 +328,18 @@ void createDungeon(room* rooms,door** doors,object** objects,hero bronson) {
         }
         attron(COLOR_PAIR(7));
         
-        if (bronson.start==i) {
-            mvaddch(bronson.yPos+yDif[i],bronson.xPos+xDif[i],'@');
+        if (me.start==i) {
+            mvaddch(me.yPos+yDif[i],me.xPos+xDif[i],'@');
         }
     }
     attron(COLOR_PAIR(7));
     mvprintw(0,0,"| ");
     attron(COLOR_PAIR(2));
-    printw("Health: %d",bronson.health);
+    printw("Health: %d",me.health);
     attron(COLOR_PAIR(7));
     printw(" | ");
     attron(COLOR_PAIR(6));
-    printw("Damage: %d",bronson.damage);
+    printw("Damage: %d",me.damage);
     attron(COLOR_PAIR(7));
     printw(" | ");
     attron(COLOR_PAIR(3));
@@ -356,11 +347,11 @@ void createDungeon(room* rooms,door** doors,object** objects,hero bronson) {
     attron(COLOR_PAIR(7));
     printw(" | ");
     attron(COLOR_PAIR(4));
-    printw("Room: %d",bronson.start+1);
+    printw("Room: %d",me.start+1);
     attron(COLOR_PAIR(7));
     printw(" |    ");
-    move(bronson.yPos+yDif[bronson.start],bronson.xPos+xDif[bronson.start]);
-    playRogue(bronson,xDif,yDif,rooms,objects);
+    move(me.yPos+yDif[me.start],me.xPos+xDif[me.start]);
+    playRogue(me,xDif,yDif,rooms,objects);
 
     return;
 }
