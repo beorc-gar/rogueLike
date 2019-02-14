@@ -1,5 +1,5 @@
-#ifndef BRONSON_GRAANSMA_MENU_H
-#define BRONSON_GRAANSMA_MENU_H
+#ifndef _MENU_H
+#define _MENU_H
 
 /*
  Menu: Navigate menu selections to make a choice
@@ -22,4 +22,4 @@ void instructions(void);
 */
 void highScores(void);
 
-#endif  // INCLUDE_MENU_H_
+#endif  //_MENU_H_
