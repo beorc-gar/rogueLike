@@ -1,5 +1,5 @@
-#ifndef BRONSON_GRAANSMA_MAIN_H
-#define BRONSON_GRAANSMA_MAIN_H
+#ifndef _MAIN_H
+#define _MAIN_H
 
 #include <stdlib.h>
 #include <ncurses.h>
