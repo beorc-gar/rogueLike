@@ -37,4 +37,4 @@ typedef struct room {
     int width;
 }room;
 
-#endif  // INCLUDE_MAIN_H_
+#endif  //_MAIN_H_
