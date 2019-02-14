@@ -55,6 +55,6 @@ object getObject(char* subString);
  Pre: structs have been made using the parsed file
  Post: the user can start interacting with the game
 */
-void createDungeon(room* rooms,door** doors,object** objects,hero bronson);
+void createDungeon(room* rooms,door** doors,object** objects,hero me);
 
 #endif  //_SETUP_H_
