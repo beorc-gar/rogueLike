@@ -1,5 +1,5 @@
-#ifndef BRONSON_GRAANSMA_SETUP_H
-#define BRONSON_GRAANSMA_SETUP_H
+#ifndef _SETUP_H
+#define _SETUP_H
 
 /*
  startGame: Dynamically allocates memory to be used for playing the game
@@ -57,4 +57,4 @@ object getObject(char* subString);
 */
 void createDungeon(room* rooms,door** doors,object** objects,hero bronson);
 
-#endif  // INCLUDE_SETUP_H_
+#endif  //_SETUP_H_
