@@ -25,7 +25,7 @@ int menu(void) {
     attron(COLOR_PAIR(7));
     mvprintw(6,0,"Use W and S keys to navigate selections.");
     mvprintw(7,0,"press ENTER when you are ready.");
-    mvprintw(0,11,"by Bronson Graansma");
+    mvprintw(0,11,"by beorc-gar");
 
     while (input!='\n') {
         attron(COLOR_PAIR(7));
